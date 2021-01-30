@@ -25,6 +25,10 @@ def getcreattableddl (tablename, header, delim):
 	return (returnval + colprint)
 
 def writestringtofile (filename, filebody):
+	#------------------------------------------
+	# Creates a file with filename and the contents with filebody
+	#------------------------------------------
+
 	file = open(filename, "w")
 	file.write (filebody)
 	file.close()
@@ -54,6 +58,10 @@ def getsqlldrctlhdr (tablename, header, delim):
 	return (returnval + colprint)
 
 def urlget (url):
+	#--------------------------------------------------------
+	# Accepts a url and returns a string with the url contents
+	#--------------------------------------------------------
+
 	retval = ""
 	try:
 		req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
