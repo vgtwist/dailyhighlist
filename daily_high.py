@@ -13,6 +13,8 @@ def finviz_list(urltext):
 		s = s[s.find("chart.ashx"):]
 		b = s.find("<br>")
 
+
+
 	symbol = commonlib.extractstring(s[:b], "t=", 20, "\\")
 	if symbol != None:
 		sym.append (symbol)
@@ -32,6 +34,10 @@ def finviz_list_all (urltext):
 	symbolstr = ",".join (sym)
 	return symbolstr
 
-resultstr = finviz_list_all("https://finviz.com/screener.ashx?v=111&s=ta_newhigh&f=fa_pe_profitable,sh_avgvol_o500")
-print (resultstr)
-commonlib.writestringtofile ("dailyhighlist.txt", resultstr)
+def main():
+	resultstr = finviz_list_all("https://finviz.com/screener.ashx?v=111&s=ta_newhigh&f=fa_pe_profitable,sh_avgvol_o500")
+	print (resultstr)
+	commonlib.writestringtofile ("dailyhighlist.txt", resultstr)
+
+if __name__=="__main__":
+    main()
