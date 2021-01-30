@@ -35,7 +35,8 @@ def finviz_list_all (urltext):
 	return symbolstr
 
 def main():
-	resultstr = finviz_list_all("https://finviz.com/screener.ashx?v=111&s=ta_newhigh&f=fa_pe_profitable,sh_avgvol_o500")
+	finviz_screen_url = "https://finviz.com/screener.ashx?v=111&s=ta_newhigh&f=fa_pe_profitable,sh_avgvol_o500" # url from finviz screener
+	resultstr = finviz_list_all(finviz_screen_url)
 	print (resultstr)
 	commonlib.writestringtofile ("dailyhighlist.txt", resultstr)
 
